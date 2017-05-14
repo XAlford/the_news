@@ -37,6 +37,8 @@ Job Scheduler calls a Service to load new articles whenever the phone is connect
 ![image](/screenshots/saved_items.jpg)
 ![image](/screenshots/category_view.jpg)
 ![image](/screenshots/detail_view.jpg)
+![image](/screenshots/web_view.jpg)
+![image](/screenshots/navigation_drawer.jpg)
 
 
 
