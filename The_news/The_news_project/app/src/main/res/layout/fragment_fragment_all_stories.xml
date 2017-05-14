@@ -1,0 +1,22 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_marginBottom="20dp"
+             tools:context="com.example.ivonneortega.the_news_project.mainActivity.fragments.FragmentAllStories">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/all_swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:theme="@style/Color1SwitchStyle">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView_all_stories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+</FrameLayout>

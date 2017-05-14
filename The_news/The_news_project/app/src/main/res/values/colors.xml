@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F33534</color>
+    <color name="colorPrimaryDark">#D83130</color>
+    <color name="colorAccent">#FFFF</color>
+    <color name="background">#F1F1F1</color>
+    <color name="textColor">#999999</color>
+    <color name="categoryColor">#FF1414</color>
+    <color name="blue_clock">#4B89AC</color>
+
+
+    <color name="colorPrimaryDarkTheme">#434343</color>
+    <color name="colorPrimaryDarkDarkTheme">#242424</color>
+    <color name="colorAccentDarkTheme">#FF8080</color>
+
+</resources>
