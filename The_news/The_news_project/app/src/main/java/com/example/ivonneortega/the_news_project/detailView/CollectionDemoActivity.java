@@ -188,7 +188,7 @@ implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener
         } else if (id == R.id.nav_politics) {
             moveToCategoryViewActivity("Politics");
         } else if (id == R.id.nav_business) {
-            moveToCategoryViewActivity("Business Day");
+            moveToCategoryViewActivity("Business");
         } else if (id == R.id.nav_technology) {
             moveToCategoryViewActivity("Technology");
         } else if (id == R.id.nav_science) {
@@ -473,7 +473,7 @@ implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener
             //((TextView)rootView.findViewById(R.id.detail_content)).setText(args.getString(CONTENT));
             searchArticlesByTop(args.getString(URL),((TextView)rootView.findViewById(R.id.detail_content)),args.getLong(ID));
             ((TextView) rootView.findViewById(R.id.detail_date)).setText((args.getString(DATE)));
-            TextView urlText = (TextView) rootView.findViewById(R.id.detail_url);
+            Button urlText = (Button) rootView.findViewById(R.id.detail_url);
             urlText.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

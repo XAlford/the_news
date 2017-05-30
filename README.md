@@ -1,48 +1,62 @@
-# The news
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #3
 
-**The news** is an app that takes articles from New York Times API and displays them in sections. The articles are displayed by categories and by top stories news.
+#### Overview
 
-This app was built as a group project for **General Assembly’s Android development Bootcamp**.
+##### Team members - Will, Ivonne, Sam
 
-## Project Details
+Our app for this project is a news reader based on the New York Times API per the following specifications:
 
-To be able to use New York Times API, 3 different end points had to be used. "News Wire", "Top Stories" and "Search". News Wire gives the most recent articles and Top Stories gives the top articles. Because those 2 end points only provided title, category and image url, the search end point had to be used to get a small paragraph for each article. Because these 3 end points were using the same API KEY, the search end point is only used when detail activity loads data for the article, if the requested article doesn't have a paragraph stored in the database the search end point is called and the paragraph stored in the database to prevent future calls for the same article.
+* [CNN](CNN)
 
-Main activity has a view pager and tab layout to hold 3 different fragments. "All Stories", "Top Stories", and "Saved Articles".
+Users can view news as it comes out based on category, and they can view top news items in a continuous stream. Users can also share articles via social media. The app periodically checks for new articles, and the user can also manually check for updates.
 
-All Stories includes a recycler view that holds each category title and another recycler view that holds a maximum of six items. The child recycler view has two different view types: the articles and a custom view that is always going to be at the last position allowing the user to see all the articles in each category.
+---
 
-Each activity (except search) has a navigation drawer that includes all the categories so the user can go directly to a category without having to go to all stories fragment.
+#### Functionality
 
-When clicking on a article an Intent is created with the article ID and also a specific key to know which activity is calling startActivity. Detail Activity has a custom view pager to be able to swipe left and right to move to the previuos or next article. The second key is used to pull data from the database to create a list for the view pager. This list is only populated with the articles that correspond to the previous activity, meaning that if an item from top stories is clicked, when swiping left and right in detail view the next article that is going to be shown is going to be an article from top stories. If an item from a category is clicked, when swiping left and right the next article that is going to be shown is going to be an article for that category and so on for each activity that starts detail view.
+When the app first opens, it takes the user to a loading page, which checks the server for new articles, which will be available for reading once the check is complete. This check can take additional time based on how long it has been since the last load. Articles downloaded during this check are stored in a database for quick access. Part of the download process checks to see whether articles are already in the database, so as not to add duplicates.
 
-Job Scheduler calls a Service to load new articles whenever the phone is connected to a WIFI network and charging. The service loads the articles to the database, if the limit of articles in the database is reached, the services removes the oldest article from the database before inserting a new one.
+Once the initial load has been completed the user is taken to the main activity, which has three primary tabs in a `ViewPager`: All stories, Top stories, and Save. All stories contains categorized horizontal scrolling `RecyclerView`s of news thumbnails, all nested within a standard vertical scrolling `RecyclerView`. Each row of articles contains five thumbnails. At the end of the row is a button that takes the user to a full list of all items in that category. Any item in these category views can be saved, shared, or opened and read.
 
+The Top stories tab contains a single `RecyclerView` containing all of the collected top news items. Each item in this tab displays a thumbnail, the title, the date of publication, the category, and buttons for sharing and saving. Tapping the save button, shaped like a heart, adds the article to the saved articles list, while tapping the share button brings up a share using chooser.
 
+The Save tab contains a list of all items the user has saved. Tapping the share button brings up a share using chooser. Swiping left on an article in this view removes it from the saved list. Removing an article from the saved list brings up a `SnackBar` giving the user the option to undo this action.
 
-## Features include:
+Tapping on any article opens up its detail view. The detail view contains the article’s image, publication date, title, first paragraph, and URL. Tapping the URL opens the full contents of the article in a `WebView`. Swiping left or right while in an article’s detail view opens up the next or previous article in that category, respectively. While in detail view the user can also share an article or add and remove it from their saved articles list.
 
-- Articles that are displayed by category.
-- Ability to save articles to read later.
-- Abitility the articles database.
-- Swipe left and right in Detail view to read the next article.
+Users can share articles from this app to various social media platforms or other apps via an `Intent`. Tapping the share button brings up a share using chooser, which will present the user with all of the applicable options on their device for sharing content.
 
-#### Skills/languages/tools: Java, Android SDK, SQLite, Services, Job Scheduler, Retrofit, Volley, Rest API, JSON, GSON.
+On the left side of the app is a navigation drawer, which is accessible from any view except search. The navigation drawer allows quick access to all of the assorted categories of articles.
 
-## Screenshots
+When a new top story is downloaded into the database, a notification is displayed. The notification contains the headline of the article and a button. Clicking the notification will immediately open the detail view for the article, while clicking the button will add the article to the user’s saved articles list.
 
-![image](/screenshots/loading_page.jpg)
-![image](/screenshots/all_stories.jpg)
-![image](/screenshots/top_stories.jpg)
-![image](/screenshots/saved_items.jpg)
-![image](/screenshots/category_view.jpg)
-![image](/screenshots/detail_view.jpg)
-![image](/screenshots/web_view.jpg)
-![image](/screenshots/navigation_drawer.jpg)
-![image](/screenshots/search.jpg)
-![image](/screenshots/settings_page.jpg)
-![image](/screenshots/share_using.jpg)
+The main activity contains a search button that takes the user to a separate search activity. In this activity the user can search for articles by title or category.
 
+The app contains a settings page accessible from the top right corner of the main activity and detail view. The user can choose whether they want a red or black theme for the app, or whether they want notifications to be displayed.
 
+In the `OnCreate` method of the main activity, a background service is started that will automatically check for new articles as long as the device is plugged in and connected to a wireless network. If the user would like to refresh the article list manually, they can pull down to refresh while on the All stories or Top stories tabs to the main activity.
 
+---
 
+#### Known bugs
+
+- Due to relatively low number of allotted Top Stories API calls, 1000 per day, the daily limit can be reached and result in errors.
+
+---
+
+#### Screenshots
+
+<p align="center">
+	<img src="screenshots/loading_page.jpg" width="250"/>
+	<img src="screenshots/all_stories.jpg" width="250"/>
+	<img src="screenshots/top_stories.jpg" width="250"/>
+	<img src="screenshots/saved_items.jpg" width="250"/>
+	<img src="screenshots/detail_view.jpg" width="250"/>
+	<img src="screenshots/web_view.jpg" width="250"/>
+	<img src="screenshots/navigation_drawer.jpg" width="250"/>
+	<img src="screenshots/share_using.jpg" width="250"/>
+	<img src="screenshots/settings_page.jpg" width="250"/>
+	<img src="screenshots/dark_theme.jpg" width="250"/>
+	<img src="screenshots/category_view.jpg" width="250"/>
+	<img src="screenshots/search.jpg" width="250"/>
+</p>

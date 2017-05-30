@@ -1,0 +1,143 @@
+User Stories
+
+
+==================
+FROM MAIN ACTIVITY
+==================
+=>
+As a users I can drag downward to refresh TOP STORIES
+
+                              ALL STORIES
+                              ===========
+
+=>As a users I can clicks on article image/description and move to detail of that
+particular article
+
+=>
+As a users I can swipe LEFT with category to view articles with that category
+
+=> **********
+As a users I can  click [>] and moves to to list of article s
+
+=> **********
+As a users I can  click hamburger menu icon and drawer slides from left of screen
+
+=> ***********
+As a users I can click search icon and brings up search field
+
+=> **********
+As a users I can click settings icon and moves to settings screen
+
+=>
+As a users I can 'navigate' to TOP STORIES fragment from ALL STORIES Fragment via left
+swipe
+
+=>
+As a users I can 'navigate' to SAVE fragment from ALL STORIES Fragment via 2 left
+swipes
+
+=>
+As a users I can 'navigate' to TOP STORIES fragment from ALL STORIES Fragment via click of
+TOP STORIES header
+
+
+=>
+As a users I can 'navigate' to SAVE fragment from ALL STORIES Fragment via Click of
+SAVES header
+
+                              TOP STORIES
+                              ===========
+  =>
+  As a users I can click on article image/description and move to detail of that
+  particular article
+
+  =>
+  As a users I can swipe LEFT to navigate to SAVE Category
+
+  =>
+  As a users I can swipes RIGHT to navigate to ALL STORIES category
+
+  =>
+  As a users I can click [>] and moves to to list of article s
+
+  =>
+  **********
+  As a users I can click hamburger menu icon and drawer slides from left of screen
+
+  =>
+  ***********
+  As a users I can click search icon and brings up search field
+
+  =>
+  **********
+  As a users I can click settings icon and moves to settings screen
+
+
+  =>
+  As a users I can 'navigate' to TOP STORIES fragment from ALL STORIES Fragment via click of
+  TOP STORIES header
+
+
+  =>
+  As a users I can 'navigate' to SAVE fragment from ALL STORIES Fragment via Click of
+  SAVES header
+
+  =>
+  As a users I can click share icon and navigates to share menu.
+
+
+    =================
+       DETAIL VIEW
+    =================
+
+    =>
+    As a users I can share article with other social media applications via share icon
+
+    =>
+    As a users I can go to settings activity via settings icon
+
+    =>
+    As a users I can retrieve navigation drawer via hamburger menu icon
+
+    =>
+    As a users I can like the article and store it in SAVES activity
+
+    =>
+    As a users I can click the [READ MORE] and view the actual article from the source
+    i.e. 'NY TIMES'
+
+
+
+
+
+
+  =================
+        SAVE
+  =================
+
+  =>
+  As a users I can can click SAVED article and navigate to the detail activity
+
+  =>
+  user can click on share icon and navigate to share menu
+
+
+  From Search
+
+
+                                    Back Icon
+                                    =========
+
+
+
+
+  =>
+  As a users I can  click [<-] return icon and navigates back to MainActivity
+
+
+
+                                      Search
+                                      ======
+
+  =>
+  As a users I can input characters and search from search field in MainActivity

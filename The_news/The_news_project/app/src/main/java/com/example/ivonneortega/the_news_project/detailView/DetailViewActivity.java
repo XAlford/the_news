@@ -22,7 +22,7 @@ import com.example.ivonneortega.the_news_project.data.Article;
 import com.example.ivonneortega.the_news_project.database.DatabaseHelper;
 
 public class DetailViewActivity extends AppCompatActivity
-        implements  NavigationView.OnNavigationItemSelectedListener, View.OnClickListener, DetailViewFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener, DetailViewFragment.OnFragmentInteractionListener {
 
     private long mId;
     private ImageView mImage;
@@ -32,16 +32,17 @@ public class DetailViewActivity extends AppCompatActivity
 
     private ShareActionProvider mShareActionProvider;
 
-        protected void onCreate(Bundle savedInstanceState)
-        {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_detail_view);
-            Toolbar toolbar = (Toolbar) findViewById(R.id.root_toolbar);
-            setSupportActionBar(toolbar);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_detail_view);
 
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-            ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                   this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.root_toolbar);
+        setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
